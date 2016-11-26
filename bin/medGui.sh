@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/chip/roms
+cd $HOME/roms
 
 folderpath=$(ls)
 
