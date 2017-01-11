@@ -58,3 +58,13 @@ Your gbc/gbc/nes roms need to be placed inside `/home/chip/roms/` folder.
 ### Change controls
 
 To change controls inside Mednafen, use the following keyboard shortcut: `alt+shift+1`
+
+# Todo
+
+## Add icons in pockethome
+
+```
+sed 's/},\s*]/}\n]/' /home/chip/.pocket-home/config.json | jq '.pages[0].items |= (.+ [{"name":"Pocket Installer","icon":"/home/chip/PocketInstaller/desktopicon.png","shell":"/home/chip/PocketInstaller/PocketInstaller.sh"}])' > tmp.$$.json
+mv tmp.$$.json /home/chip/.pocket-home/config.json
+killall pocket-home && pocket-home
+```
